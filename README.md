@@ -1,40 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# New Hire Onboarding Web Application (Frontend)
 
-## Getting Started
+## Overview
+This is the frontend for the New Hire Onboarding Web Application, built with **Next.js** using page-based routing. The application allows new hires to enter their details, select an appropriate training path based on their role, and view a summary of their onboarding journey.
 
-First, run the development server:
+## Features
+- **Company-branded UI** with responsive design
+- **Form validation** for user input fields
+- **Dynamic training path selection** based on job role
+- **Summary page** displaying user details and selected training courses
+- **Next.js Page Routing** for smooth navigation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+- **Frontend Framework:** Next.js (React-based framework)
+- **UI Styling:** Tailwind CSS (or custom styles as needed)
+- **State Management:** React Hooks / Context API (if required)
+- **API Integration:** Fetching data from Django REST Framework backend
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js** (v16+ recommended)
+- **npm** or **yarn**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Setup
+1. **Clone the repository:**
+   ```sh
+   git clone git@github.com:mrnat7471/BP0278796-part-1-frontend.git
+   cd BP0278796-part-1-frontend
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+   or
+   ```sh
+   yarn install
+   ```
+3. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+   or
+   ```sh
+   yarn dev
+   ```
+4. **Open in browser:**
+   The application will be available at `http://localhost:3000`
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Deployment
+For production deployment:
+1. **Build the application:**
+   ```sh
+   npm run build
+   ```
+   or
+   ```sh
+   yarn build
+   ```
+2. **Start the production server:**
+   ```sh
+   npm start
+   ```
+   or
+   ```sh
+   yarn start
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
