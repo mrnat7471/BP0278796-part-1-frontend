@@ -146,12 +146,7 @@ yarn start
 
 ---
 
-## Admin Dashboard (Optional)
-
-To enable admin features:
-
-* Ensure the JWT user payload includes `role: "admin"`
-* Or manually set it in your SQLite DB
+## Admin Dashboard
 
 Features:
 
@@ -166,12 +161,39 @@ Features:
 
 ```
 /pages
-  /api/verify         – Magic link login
-  /api/profile        – Get/update profile
-  /api/admin/users    – Admin list users
-  /dashboard          – New hire dashboard
-  /learning-paths     – Selection & detail view
-  /admin/dashboard    – Admin CSV/search/export
+│
+├── admin/
+│   └── index.tsx                 → Admin dashboard page (search, filter, CSV)
+│
+├── api/
+│   ├── admin/
+│   │   └── users.ts              → Admin API: Get all hires
+│   │
+│   ├── profile/
+│   │   ├── index.ts              → Get current user profile
+│   │   └── update.ts             → Update user profile
+│   │
+│   ├── active-path.ts            → Get user's learning path (includes courses)
+│   ├── login.ts                  → Magic link login (email only)
+│   ├── paths.ts                  → Get learning paths by role
+│   ├── register.ts               → Register new user + send magic link
+│   ├── save-path.ts              → Save selected path to user
+│   └── verify.ts                 → Verify magic link token and issue JWT
+│
+├── learning-paths/
+│   ├── index.tsx                 → View current selected learning path
+│   └── selection.tsx             → Choose a learning path (filtered by role)
+│
+├── _app.tsx                      → Global styles & layout wrapper
+├── _document.tsx                 → HTML document structure (if customised)
+├── dashboard.tsx                 → User dashboard (after login)
+├── index.tsx                     → Landing/home page
+├── login.tsx                     → Login form (email only)
+├── logout.tsx                    → Clear token and redirect
+├── register.tsx                  → Register form for new hires
+├── settings.tsx                  → (Optional) Edit profile form
+└── verify.tsx                    → Handles token from email and logs in
+
 
 /prisma
   schema.prisma       – Database models
