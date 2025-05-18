@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  fullName       String
+  startDate      DateTime
+  jobRole        String
+  learningPathId String?
+  learningPath   LearningPath? @relation(fields: [learningPathId], references: [id])
+}
+
+model LearningPath {
+  id        String   @id @default(cuid())
+  role      String
+  title     String
+  courses   Course[] // ✅ Replace primitive list with related table
+  users     User[]   // ✅ Back relation to User
+}
+
+model Course {
+  id             String        @id @default(cuid())
+  name           String
+  learningPath   LearningPath  @relation(fields: [learningPathId], references: [id])
+  learningPathId String
+}
+
+model MagicLink {
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+}
